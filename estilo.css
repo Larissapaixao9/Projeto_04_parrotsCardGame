@@ -1,0 +1,142 @@
+
+body{
+    background-color: #EEF9BF;
+}
+
+ /*.bloco2, .bloco3, .bloco4, .bloco5, .bloco6, .bloco7, .bloco8, .bloco9, .bloco10, .bloco11, .bloco12,.bloco13, .bloco14{*/
+    .bloco{
+    height: 146px;
+    width: 117px;
+    background-color: darkblue;
+    margin: 10px;
+    transform-style: preserve-3d;
+    transition: transform .5s; /*Como todo elemento HTML tem uma parte de trás, se deixarmos apenas com transform-style e transition, não vai funcionar*/
+    /*Vamos esconder a parte de trás da carta, q é sua imagem espelhada*/
+    backface-visibility: hidden;
+    
+}
+
+.escondido{
+    display: none;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+}
+.rosa{
+    background-color: palevioletred;
+}
+.topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    color: #75B79E;
+    font-size: 56px;
+}
+.bloco:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco1:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco2:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco3:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco4:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco5:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco6:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco7:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco8:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco9:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco10:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco11:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco12:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco13:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+.bloco14:active{
+    transition: transform .3s;
+    transform: scale(0.95);
+}
+img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.bloco.flip{
+    transform: rotateY(180deg);
+}
+.frente{
+    transform: rotateY(180deg);
+}
+.tras, .frente{
+    border: 1px solid purple;
+    width: 100px;
+    height: 100px;
+    
+    position: absolute;
+}
+.tras{
+    background-color: blue;
+    z-index: 2;
+}
+
+@media(max-width:400px){
+    .tras, .frente{
+        width: 100%;
+    }
+    img{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+    }
+    .bloco{
+        width: 100%;
+    }
+}
