@@ -7,13 +7,14 @@ body{
     .bloco{
     height: 146px;
     width: 117px;
-    background-color: darkblue;
+    background-color: #A7E9AF;
     margin: 10px;
     transform-style: preserve-3d;
-    transition: transform .5s; /*Como todo elemento HTML tem uma parte de trás, se deixarmos apenas com transform-style e transition, não vai funcionar*/
+    transition: transform .5s; /*Como todo elemento HTML tem uma parte de trás, 
+    se deixarmos apenas com transform-style e transition, não vai funcionar*/
     /*Vamos esconder a parte de trás da carta, q é sua imagem espelhada*/
     backface-visibility: hidden;
-    
+    border-radius: 5px;
 }
 
 .escondido{
@@ -27,7 +28,7 @@ body{
     width: 700px;
     margin: 0 auto;
     position: relative;
-    perspective: 1000px;
+    perspective: 8000px;
 }
 .rosa{
     background-color: palevioletred;
@@ -114,15 +115,22 @@ img{
 .frente{
     transform: rotateY(180deg);
 }
-.tras, .frente{
-    border: 1px solid purple;
+ .frente{
+    border: 1px solid #EEF9BF;
     width: 100px;
     height: 100px;
     
     position: absolute;
 }
 .tras{
-    background-color: blue;
+    border: 1px solid #A7E9AF;;
+    width: 100px;
+    height: 100px;
+  
+    position: absolute;
+}
+.tras{
+    background-color: #A7E9AF;
     z-index: 2;
 }
 
