@@ -5,6 +5,25 @@ let tentativas=0;
 let SoDoisClicks=0;
 let resposta;
 
+const carregando=document.querySelector(".carregando");
+const conteudo=document.querySelector(".conteudo");
+
+function iniciar_2(){
+    setTimeout(()=>{
+        carregando.style.opacity=0;
+       carregando.style.display="none" ;
+
+       conteudo.style.display="block";
+       setTimeout(()=>
+        (conteudo.style.opacity=1),50);
+       
+       conteudo.style.opacity=1
+    },4000)
+}
+
+iniciar_2()
+
+function iniciar(){
 do{
 resposta=prompt("Digite um numero par, entre 4 e 14 para escolher o numero de cartas");}
 while(resposta<4 || resposta>14 || resposta%2!=0)
@@ -87,18 +106,25 @@ while(resposta<4 || resposta>14 || resposta%2!=0)
     let j=document.querySelector(".bloco.carta10");
     j.classList.add("escondido");
     }
-    
+   
+}
+
+
+
+
     
 function virar(){
     this.classList.add("flip");
 
     
     if(Selecionou==0){
+        
         Selecionou=1;
         primeira_selecao=this;
         tentativas+=1;
     }
     else{
+        
         tentativas+=1;
         Selecionou=0;
         segunda_selecao=this;
@@ -118,7 +144,12 @@ function virar(){
         let total=document.getElementsByClassName("flip").length;
         if(total==resposta){
             alert("O JOGO ACABOU");
-            alert("Você ganhou em "+tentativas+"jogadas!");
+            alert("Você ganhou em "+tentativas+" jogadas!");
+            let resposta2=prompt("Você quer jogar novamente?");
+            if(resposta2=="sim"){
+                window.location.reload(true);
+            }
+           
           
         }
     }
@@ -142,6 +173,7 @@ let cartas=document.querySelectorAll(".bloco");
 
 cartas.forEach(bloco => {bloco.addEventListener("click",virar)}); 
 
+window.addEventListener("load",iniciar)
 
 
 
